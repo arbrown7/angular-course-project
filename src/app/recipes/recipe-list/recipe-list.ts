@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipeModel } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './recipe-list.css',
 })
 export class RecipeList {
+  recipes: RecipeModel[] = [
+    new RecipeModel('A Test Recipe', 'This is simply a test', 'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg')
+  ];
 
 }
