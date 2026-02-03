@@ -11,6 +11,7 @@ import { RecipeItem } from './recipes/recipe-list/recipe-item/recipe-item';
 import { ShoppingList } from './shopping-list/shopping-list';
 import { ShoppingEdit } from './shopping-list/shopping-edit/shopping-edit';
 import { Dropdown } from './shared/dropdown';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Dropdown } from './shared/dropdown';
     FormsModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    [ShoppingListService]
   ],
   bootstrap: [App]
 })
