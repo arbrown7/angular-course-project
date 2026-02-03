@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { RecipeModel } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,12 +8,17 @@ import { RecipeModel } from '../recipe.model';
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css',
 })
-export class RecipeList {
+export class RecipeList  implements OnInit {
   @Output() recipeWasSelected = new EventEmitter<RecipeModel>();
-  recipes: RecipeModel[] = [
-    new RecipeModel('Acai Bowl: Planet Bowl', 'Very environmental', 'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg'),
-    new RecipeModel('Acai Bowl: Tinkling Purple Fancy Bowl', 'I think the name is funny', 'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg')
-  ];
+  recipes: RecipeModel[];
+
+  constructor(private recipeService: RecipeService) {
+
+  }
+
+  ngOnInit() {
+    this.recipes = this.recipeService.getRecipes();
+  }
 
   onRecipeSelected(recipe: RecipeModel) {
     this.recipeWasSelected.emit(recipe);
