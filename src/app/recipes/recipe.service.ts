@@ -1,12 +1,30 @@
 import { EventEmitter } from "@angular/core";
 import { RecipeModel } from "./recipe.model";
+import { Ingredient } from "../shared/ingredient.model";
 
 export class RecipeService  {
     recipeSelected = new EventEmitter<RecipeModel>();
 
     private recipes: RecipeModel[] = [
-    new RecipeModel('Acai Bowl: Planet Bowl', 'Very environmental', 'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg'),
-    new RecipeModel('Acai Bowl: Tinkling Purple Fancy Bowl', 'I think the name is funny', 'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg')
+    new RecipeModel(
+        'Acai Bowl: Planet Bowl', 
+        'Very environmental', 
+        'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg',
+        [
+            new Ingredient('strawberries', 12),
+            new Ingredient('acai', 1)
+        ]
+    ),
+    new RecipeModel(
+        'Acai Bowl: Twinkling Purple Fancy Bowl', 
+        'I think the name is funny', 
+        'https://hlyfemethod.com/wp-content/uploads/2018/04/rainbow-bowl-photo.jpg',
+        [
+            new Ingredient('star fruit', 1),
+            new Ingredient('acai', 1),
+            new Ingredient('yogurt', 1)
+        ]
+    )
     ];
 
     getRecipes() {
