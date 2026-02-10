@@ -14,6 +14,7 @@ import { Dropdown } from './shared/dropdown';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStart } from './recipes/recipe-start/recipe-start';
+import { RecipeEdit } from './recipes/recipe-edit/recipe-edit';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RecipeStart } from './recipes/recipe-start/recipe-start';
     ShoppingList,
     ShoppingEdit,
     Dropdown,
-    RecipeStart
+    RecipeStart,
+    RecipeEdit
   ],
   imports: [
     BrowserModule,
