@@ -15,6 +15,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStart } from './recipes/recipe-start/recipe-start';
 import { RecipeEdit } from './recipes/recipe-edit/recipe-edit';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { RecipeEdit } from './recipes/recipe-edit/recipe-edit';
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    [ShoppingListService]
+    [ShoppingListService, RecipeService]
   ],
   bootstrap: [App]
 })
